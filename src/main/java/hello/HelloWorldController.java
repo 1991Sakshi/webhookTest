@@ -24,10 +24,10 @@ public class HelloWorldController {
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj) throws JsonParseException, JsonMappingException, IOException{
-    	ObjectMapper objectMapper = new ObjectMapper();
-    	byte[] mapData = obj.getBytes();
-    	Map<String,String> myMap = new HashMap<String, String>();
-    	myMap = objectMapper.readValue(mapData, HashMap.class);
-         return new WebhookResponse("Hello! " +myMap , "Text " + obj);
+    	//ObjectMapper objectMapper = new ObjectMapper();
+    	//byte[] mapData = obj.getBytes();
+    	//Map<String,String> myMap = new HashMap<String, //String>//();
+  //  	myMap = objectMapper.readValue(mapData, //HashMap.class);
+         return new WebhookResponse("Hello! Sakshi" , "Text " + obj);
     }//webhookResponse
 }
