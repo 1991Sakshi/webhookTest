@@ -16,10 +16,10 @@ public class HelloWorldController {
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
          //String n="Sakshi";
-         //JSONObject obj1=new JSONObject();
-         //String n=obj1.getString("result");
-    	Date d=new Date();
+         JSONObject obj1=new JSONObject();
+        String n=obj1.getString("result");
+    	   //Date d=new Date();
     	
-         return new WebhookResponse("Hello! " + d, "Text " + obj);
+         return new WebhookResponse("Hello! " + n, "Text " + obj);
     }//webhookResponse
 }
