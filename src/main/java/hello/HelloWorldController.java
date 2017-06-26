@@ -24,10 +24,6 @@ public class HelloWorldController {
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj) throws JsonParseException, JsonMappingException, IOException{
-         //String n="Sakshi";
-    	//Gson gson = new GsonBuilder().setPrettyPrinting().create();
-         //String n=obj1.getString("result");
-    	//Date d=new Date();
     	ObjectMapper objectMapper = new ObjectMapper();
     	byte[] mapData = obj.getBytes();
     	Map<String,String> myMap = new HashMap<String, String>();
