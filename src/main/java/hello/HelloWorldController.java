@@ -26,7 +26,7 @@ public class HelloWorldController {
     	ObjectMapper objectMapper = new ObjectMapper();
     	byte[] mapData = obj.getBytes();
     	Map<String,String> myMap = new HashMap<String,String>();
- 	myMap = objectMapper.readValue(mapData, //HashMap.class);
-    return new WebhookResponse("Hello! Sakshi" , "Text " + obj);
+ 	myMap = objectMapper.readValue(mapData, HashMap.class);
+    return new WebhookResponse("Hello! Sakshi"+myMap , "Text " + obj);
    }//webhookResponse
 }
