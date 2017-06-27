@@ -22,9 +22,7 @@ import java.util.Map;
 public class HelloWorldController {
 
     @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody WebhookResponse webhook(@RequestBody String obj) throws JsonParseException, JsonMappingException, IOException{
-        
-    	ObjectMapper objectMapper = new ObjectMapper();
+    public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
      return new WebhookResponse("Hello!", "Text " + obj);
     }//webhookResponse
 }
