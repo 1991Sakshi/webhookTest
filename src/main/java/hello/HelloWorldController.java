@@ -11,11 +11,12 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+//import com.google.gson.Gson;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-
+import org.json.*;
 
 @Controller
 @RequestMapping("/webhook")
@@ -23,10 +24,11 @@ public class HelloWorldController {
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj) throws JsonParseException, JsonMappingException, IOException{
+        
     	ObjectMapper objectMapper = new ObjectMapper();
     	byte[] mapData = obj.getBytes();
-    	Map<String,String> myMap = new HashMap<String,String>();
- 	myMap = objectMapper.readValue(mapData, HashMap.class);
-    return new WebhookResponse("Hello!" , "Text " +obj);
-   }//webhookResponse
+    	Map<String,String> myMap = new HashMap<String, String>();
+    	myMap = objectMapper.readValue(mapData, HashMap.class);
+         return new WebhookResponse("Hello!" , "Text " + obj);
+    }//webhookResponse
 }
